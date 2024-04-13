@@ -1,0 +1,1276 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"conso",
+				"console_log"
+			],
+			[
+				"chi",
+				"childNodes"
+			],
+			[
+				"cons",
+				"console_log"
+			],
+			[
+				"remove",
+				"removeClass\t.removeClass()"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"con",
+				"content_product"
+			],
+			[
+				"off",
+				"offset\t.offset()"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"console",
+				"console_log"
+			],
+			[
+				"quer",
+				"querySelectorAll"
+			],
+			[
+				"gete",
+				"getElementsByClassName"
+			],
+			[
+				"po",
+				"pointer"
+			],
+			[
+				"adde",
+				"addEventListener"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"just",
+				"justify-content"
+			],
+			[
+				"jst",
+				"justify-content"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"space-",
+				"space-around"
+			],
+			[
+				"sp",
+				"space-between"
+			],
+			[
+				"fle",
+				"flex-direction"
+			],
+			[
+				"fonts",
+				"font-size"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"font-se",
+				"font-size"
+			],
+			[
+				"dir",
+				"flex-direction"
+			],
+			[
+				"pri",
+				"primary-color"
+			],
+			[
+				"float",
+				"float"
+			],
+			[
+				"grey",
+				"grey"
+			],
+			[
+				"green",
+				"lawngreen"
+			],
+			[
+				"geen",
+				"springgreen"
+			],
+			[
+				"lightgr",
+				"lightgreen"
+			],
+			[
+				"al",
+				"align-items"
+			],
+			[
+				"space",
+				"space-evenly"
+			],
+			[
+				"s",
+				"space-between"
+			],
+			[
+				"c",
+				"center"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"alg",
+				"align-items"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"algn",
+				"align-items"
+			],
+			[
+				"re",
+				"row-reverse"
+			],
+			[
+				"cona",
+				"container"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"bg",
+				"bg-color"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"html",
+				"html"
+			],
+			[
+				"flex",
+				"flex-direction"
+			],
+			[
+				"dire",
+				"flex-direction"
+			],
+			[
+				"css",
+				"css\t.css() - single"
+			],
+			[
+				"sna",
+				"SnakeElement"
+			],
+			[
+				"appe",
+				"append\t.append()"
+			],
+			[
+				"clas",
+				"addClass\t.addClass()"
+			],
+			[
+				"createE",
+				"createElement"
+			],
+			[
+				"foreach",
+				"forEach"
+			],
+			[
+				"grid-com",
+				"grid-template-columns"
+			],
+			[
+				"dark",
+				"darkgoldenrod"
+			],
+			[
+				"wh",
+				"white"
+			],
+			[
+				"gre",
+				"lawngreen"
+			],
+			[
+				"background-c",
+				"background-clip"
+			],
+			[
+				"g",
+				"ghostwhite"
+			],
+			[
+				"ready",
+				"ready\tjQuery(document).ready"
+			],
+			[
+				"h",
+				"hello"
+			],
+			[
+				"in",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"jax",
+				"ajax\t$.ajax()"
+			],
+			[
+				"rea",
+				"replaceAll"
+			],
+			[
+				"filter",
+				"filterAccounts"
+			],
+			[
+				"acc",
+				"account"
+			],
+			[
+				"__co",
+				"__country"
+			],
+			[
+				"ac",
+				"account1"
+			],
+			[
+				"Acc",
+				"AccountManager"
+			],
+			[
+				"__",
+				"__friends"
+			],
+			[
+				"sorted",
+				"sortedPosts"
+			],
+			[
+				"sorte",
+				"sortedPosts"
+			],
+			[
+				"getmax",
+				"getMaxLikePost"
+			],
+			[
+				"sort",
+				"sortedPosts"
+			],
+			[
+				"sor",
+				"sortedPosts"
+			],
+			[
+				"get",
+				"getMaxLikePostByFriend"
+			],
+			[
+				"so",
+				"sortedList"
+			],
+			[
+				"fr",
+				"friend"
+			],
+			[
+				"name",
+				"__name"
+			],
+			[
+				"a",
+				"account2"
+			],
+			[
+				"print",
+				"printPost"
+			],
+			[
+				"pr",
+				"printPost"
+			],
+			[
+				"__su",
+				"__subject"
+			],
+			[
+				"rep",
+				"__repr__"
+			],
+			[
+				"p",
+				"post1"
+			],
+			[
+				"def",
+				"defs\tMethod"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"btn-s",
+				"btn-success "
+			],
+			[
+				"algi",
+				"align-content-center "
+			],
+			[
+				"j",
+				"justify-content-center "
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"b",
+				"border"
+			],
+			[
+				"m",
+				"margin-top"
+			],
+			[
+				"text-da",
+				"text-danger "
+			],
+			[
+				"me",
+				"fmt:message\tfmt-message"
+			],
+			[
+				"text-c",
+				"text-center "
+			],
+			[
+				"ju",
+				"justify-content-center "
+			],
+			[
+				"index",
+				"z-index"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"rbg",
+				"rgba()"
+			],
+			[
+				"text-w",
+				"text-white "
+			],
+			[
+				"new",
+				"newFullName"
+			],
+			[
+				"findU",
+				"findUserByUsername"
+			],
+			[
+				"each",
+				"each\t$.each()"
+			],
+			[
+				"ov",
+				"overflow-y"
+			],
+			[
+				"fix",
+				"fixed-top "
+			],
+			[
+				"doc",
+				"document"
+			],
+			[
+				"ci",
+				"children"
+			],
+			[
+				"sub",
+				"sub-menu"
+			],
+			[
+				"subm",
+				"submit\t.submit()"
+			],
+			[
+				"ove",
+				"overflow-y"
+			],
+			[
+				"urlpa",
+				"urlParas"
+			],
+			[
+				"lo",
+				"location"
+			],
+			[
+				"loca",
+				"location"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 544,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Flow/Flow.sublime-build",
+					""
+				],
+				[
+					"Packages/User/node.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Flow/Flow.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"start ",
+				"Live Server: Start"
+			],
+			[
+				"lives",
+				"Live Server: Start"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"live s",
+				"Live Server: Start"
+			],
+			[
+				"live",
+				"Live Server: Start"
+			],
+			[
+				"t",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"live sev",
+				"Live Server: Start"
+			],
+			[
+				"lv",
+				"Live Server: Start"
+			],
+			[
+				"live se",
+				"Live Server: Start"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"livess",
+				"Live Server: Start"
+			],
+			[
+				"livese",
+				"Live Server: Start"
+			],
+			[
+				"live sever",
+				"Live Server: Start"
+			],
+			[
+				"ui",
+				"UI: Select Theme"
+			],
+			[
+				"ter",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"termin",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"them",
+				"Agila: Select Theme"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"terminus",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"togg",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"liveser",
+				"Live Server: Start"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ive",
+				"Live Server: Start"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"live serv",
+				"Live Server: Start"
+			],
+			[
+				"livs",
+				"Live Server: Start"
+			],
+			[
+				"anaconda",
+				"Anaconda: Vagrant Enable"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"jedi",
+				"SublimeJedi: Show Docstring"
+			],
+			[
+				"select",
+				"UI: Select Theme"
+			],
+			[
+				"select ui",
+				"UI: Select Theme"
+			],
+			[
+				"",
+				"UI: Select Theme"
+			],
+			[
+				"sublimerepl:py",
+				"SublimeREPL: Python"
+			],
+			[
+				"sublime",
+				"SublimeREPL: Clojure"
+			],
+			[
+				"beaut",
+				"Formatter: Beautify with JS Beautifier"
+			],
+			[
+				"beauti",
+				"Formatter: Beautify with JS Beautifier"
+			],
+			[
+				"format",
+				"Formatter: Beautify with JS Beautifier"
+			],
+			[
+				"font",
+				"FontCycler - Next Font"
+			],
+			[
+				"git branch",
+				"Git: Change Branch"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"terminte",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"seth",
+				"Set Syntax: HTML"
+			],
+			[
+				"set",
+				"Set Syntax: HTML"
+			],
+			[
+				"list",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"lis",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"pack",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"package control",
+				"Package Control: List Packages"
+			],
+			[
+				"package",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"umpa",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"pac",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"instl",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"javascipt",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"tern",
+				"TernJS: Jump to definition"
+			],
+			[
+				"ternjs",
+				"TernJS: Get Type For Selection"
+			],
+			[
+				"show",
+				"TernJS: Show Documentation For Selection"
+			],
+			[
+				"inssta",
+				"Preferences: Settings – Syntax Specific"
+			],
+			[
+				"snip",
+				"Snippet: if"
+			],
+			[
+				"j",
+				"JSHint"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"delete",
+				"Delete Blank Lines"
+			],
+			[
+				"subc",
+				"SublimeCodeIntel: Reset"
+			],
+			[
+				"file",
+				"File Navigator: Open"
+			],
+			[
+				"toggle",
+				"View: Toggle Menu"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"reove",
+				"Package Control: Remove Package"
+			],
+			[
+				"reomove",
+				"Package Control: Remove Channel"
+			],
+			[
+				"browe",
+				"Preferences: Browse Packages"
+			],
+			[
+				"build",
+				"Build: New Build System"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"contruco",
+				"Snippet: JS constructor pattern"
+			],
+			[
+				"Snippet",
+				"Snippet: function"
+			],
+			[
+				"intaall",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"htmlb",
+				"HTMLBeautify"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 268.0,
+		"history":
+		[
+			"2",
+			"3",
+			"2",
+			"1",
+			"2",
+			"3",
+			"5",
+			"a",
+			"e",
+			"h",
+			"g",
+			"d"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Front end/Ping Pong game"
+	],
+	"file_history":
+	[
+		"/C/Users/DBT19/Downloads/Baitaptuan3/Baitaptuan3/style.scss",
+		"/C/Users/DBT19/Downloads/Baitaptuan3/Baitaptuan3/Document.html",
+		"/C/Users/DBT19/Downloads/Baitaptuan3/Baitaptuan3/_mixin.scss",
+		"/D/Front end/Lab3/style.css",
+		"/D/Front end/Lab3/_mixin.scss",
+		"/D/Front end/Lab3/style.scss",
+		"/D/Front end/Lab3/index.html",
+		"/D/Front end/Lab3/js.js",
+		"/D/Javascript Games/TeoSnake/js.js",
+		"/D/Javascript Games/TeoSnake/style.css",
+		"/D/Javascript Games/TeoSnake/index.html",
+		"/D/Python/Lab1/a.js",
+		"/D/Python/Lab1/task2_123.py",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/Anaconda/Anaconda.sublime-settings",
+		"/D/Python/Lab1/task1_1.py",
+		"/D/Python/Lab1/test.py",
+		"/D/Python/Lab1/abc.py",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/User/Anaconda.sublime-settings",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/User/Default (Windows).sublime-keymap",
+		"/D/Python/Lab1/lab1_3.py",
+		"/D/Python/Lab1/task2_1.py",
+		"/D/Python/Lab1/task2_1",
+		"/D/Python/Lab1/lab1_1.py",
+		"/D/Python/Lab1/lab1_2.py",
+		"/D/Python/Lab1/lab1_2",
+		"/C/Users/DBT19/Desktop/a.py",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/User/SublimeREPL-python.sublime-build",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/User/untitled.sublime-build",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/User/mypython",
+		"/D/React projects/First project/index.css",
+		"/D/React projects/First project/index.html",
+		"/D/React projects/First project/index.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/admin.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/top-title.html",
+		"/C/Users/DBT19/eclipse-workspace/HocSQL/src/main/webapp/ProductDetail.jsp",
+		"/C/Users/DBT19/eclipse-workspace/HocSQL/src/main/webapp/ListProducts.jsp",
+		"/C/Users/DBT19/eclipse-workspace/HocSQL/src/main/webapp/CartDetail.jsp",
+		"/C/Users/DBT19/eclipse-workspace/HocSQL/src/main/webapp/Login.jsp",
+		"/C/Users/DBT19/eclipse-workspace/HocSQL/src/main/webapp/SignUp.jsp",
+		"/C/Users/DBT19/eclipse-workspace/HocSQL/src/main/webapp/Verification.jsp",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/index.html",
+		"/C/Users/DBT19/Desktop/z/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/index.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/login.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/san-pham-hot.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/san-pham-hot.html.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/chinh-sach.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/san-pham-khuyen-mai.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/show-san-pham.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/vouchers-data-table.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/products-data-table.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/styles/admin.css",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/styles/bootstrap.css",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/javascripts/FakeDataBase.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/tai-khoan.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/signup.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/styles/tai-khoan.css",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/customers-data-table.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/promotions-data-table.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/new-product.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/promotion-data-table.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/javascripts/Utils.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/categories-data-table.html",
+		"/C/Users/DBT19/Desktop/QUYNH.HTML",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/styles/lightslider.css",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/styles/main.css",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/styles/nav.css",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/orders-data-table.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/user-detail.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/FakeDataBase.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/javascripts/UsersManager.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/javascripts/OrdersManager.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/javascripts/ProductsManager.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/javascripts/OrdersManager",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/javascripts/ProductsManager",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/footer.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/gioi-thieu.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/chi-tiet-tin-tuc.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/catalogs-data-table.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/product-data-table.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/dashboard.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/javascripts/chartDraw.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/admin/styles/admin.style",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/styles/news.css",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/tin-tuc.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/styles/product-detail.css",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/javascripts/main.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/buy-guide.html",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/javascripts/jquery-3.7.1.js",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/product-detail.css",
+		"/D/Hoc Jquerry/js.js",
+		"/D/Hoc Jquerry/style.css",
+		"/D/Hoc Jquerry/index.html",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/HTML-CSS-JS Prettify/Default (Windows).sublime-keymap",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/Javascript Beautify/Default (Windows).sublime-keymap",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/SurroundWith/Default (Windows).sublime-keymap",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/styles/base.css",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/User/Git.sublime-settings",
+		"/C/Users/DBT19/AppData/Roaming/Sublime Text/Packages/Terminus/Default.sublime-keymap",
+		"/D/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/Do_An_Giua_Ky_LTWeb_Thay_Long_Nhom_12/js.js",
+		"/D/LTWeb/lab4/Lab4.7/js.js",
+		"/D/LTWeb/lab4/Lab4.7/style.css",
+		"/D/LTWeb/lab4/Lab4.7/index.html",
+		"/D/LTWeb/lab4/Lab4.6/jsF3.js",
+		"/D/LTWeb/lab4/Lab4.6/style/styleF3.css",
+		"/D/LTWeb/lab4/Lab4.6/js.js",
+		"/D/LTWeb/lab4/Lab4.6/form3.html",
+		"/D/LTWeb/lab4/Lab4.6/form2.html",
+		"/D/LTWeb/lab4/Lab4.6/index.html",
+		"/D/LTWeb/lab3/lab3.4/index.html",
+		"/D/LTWeb/lab4/Lab4.6/style/style.css",
+		"/D/LTWeb/lab4/Lab4.6/jsF2.js",
+		"/D/LTWeb/lab4/Lab4.6/style/styleF2.css",
+		"/D/LTWeb/lab3/lab3.3/index.html",
+		"/D/LTWeb/lab4/Lab4.6/style.css",
+		"/D/LTWeb/lab3/lab3.3/style.css",
+		"/D/LTWeb/lab3/lab3.3/test.js",
+		"/D/LTWeb/lab4/Lab4.6/test.js",
+		"/D/LTWeb/lab3/lab3.2/style.css",
+		"/D/LTWeb/lab4/Lab4.5/js.js",
+		"/D/LTWeb/lab4/Lab4.5/style.css",
+		"/D/LTWeb/lab4/Lab4.5/index.html",
+		"/D/LTWeb/lab3/lab3.2/index.html",
+		"/D/LTWeb/lab4/Lab4.4/js.js",
+		"/D/LTWeb/lab4/Lab4.4/index.html",
+		"/D/LTWeb/lab4/Lab4.3/js.js"
+	],
+	"find":
+	{
+		"height": 33.3333333333
+	},
+	"find_in_files":
+	{
+		"height": 418.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 544,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 22,
+							"color_helper.color_scheme": "Packages/Agila Theme/Agila Neon Monocyanide.tmTheme",
+							"color_helper.scan":
+							{
+								"allow_scanning": true,
+								"color_class":
+								[
+									{
+										"class": "css-level-4",
+										"scopes": ""
+									}
+								],
+								"color_trigger": "(?xi)\n(?:\n    \\b(?<![-#&$])(?:\n        color\\((?!\\s*-)|(?:hsla?|(?:ok)?(?:lch|lab)|hwb|rgba?)\\(\n) |\n\\b(?<![-#&$])[\\w]{3,}(?![(-])\\b|(?<![&])\\#)\n",
+								"current_ext": ".html",
+								"current_syntax": "HTML/HTML",
+								"enabled": true,
+								"last_updated": 1711179079.99,
+								"scanning": "meta.declaration-list.css -support.type.property-name.css -comment -string,meta.property-value.css -comment -string,meta.value.css -comment -string,meta.tag.inline.any.html string.quoted -constant.character.entity.html,meta.tag.any.html meta.attribute-with-value.style.html"
+							},
+							"show_definitions": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.3333333333
+	},
+	"input":
+	{
+		"height": 142.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.Terminus":
+	{
+		"height": 122.0
+	},
+	"output.exec":
+	{
+		"height": 247.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/SublimeREPL-python.sublime-build",
+	"project": "ping-pong.sublime-project",
+	"replace":
+	{
+		"height": 62.6666666667
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control Messages"
+			],
+			[
+				"",
+				"Package Control Messages"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 227.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}

@@ -1,0 +1,210 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Ping Pong game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tac+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-board">
+            <div class="level-label">Level: 1</div>
+            <div class="game-menu">
+                <ul class="main-menu">
+                    <li data-target="continue">Tiếp tục</li>
+                    <li data-target="levels">Chọn level</li>
+                    <li data-target="tutorial">Hướng dẫn</li>
+                    <li data-target="about-me">Giới thiệu</li>
+                </ul>
+                <ul class="level-menu">
+                    <li data-level=1>Level 1</li>
+                    <li data-level=2>Level 2</li>
+                    <li data-level=3>Level 3</li>
+                    <li data-level=4>Level 4</li>
+                    <li data-level=5>Level 5</li>
+                    <li data-level=6>Level 6</li>
+                    <li data-level=back>Quay lại</li>
+                </ul>
+            </div>
+            <canvas width="900" height="620" id="canvas"></canvas>
+            <div class="wraper">
+                <img id="screen-img" src="" width="900" height="620" alt="">
+            </div>
+        </div>
+        <div class="game-information">
+            <div class="lives">
+                <canvas id="life-canvas" width="400" height="30"></canvas>
+            </div>
+            <div class="stats">
+                <h1 class="infor-title">Stats</h1>
+                <div class="container">
+                    <div class="ball-stats">
+                        <h4>Ball</h4>
+                        <div class="stat-item">
+                            <p>Damage atk </p>
+                            <p class="stat-value" id="damage-atk">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>Crit damage rate </p>
+                            <p class="stat-value">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>Primary radius </p>
+                            <p class="stat-value" id="primary-radius">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>item drop rate </p>
+                            <p class="stat-value" id="item-drop-rate"></p>
+                        </div>
+                    </div>
+                    <div class="paddle-stats">
+                        <h4>Paddle</h4>
+                        <div class="stat-item">
+                            <p>Width size </p>
+                            <p class="stat-value">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>Primary speed </p>
+                            <p class="stat-value">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>HP regen </p>
+                            <p class="stat-value" id="hp-regen">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p>MP regen </p>
+                            <p class="stat-value" id="mp-regen">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate__animated  bar-container">
+                    <div class="bar hp"></div>
+                    <div class="hp-bar-real"></div>
+                </div>
+                <div class="animate__animated  bar-container">
+                    <div class="bar mp"></div>
+                    <div class="mp-bar-real"></div>
+                </div>
+            </div>
+            <div class="inventory">
+                <h1 class="infor-title">Inventory</h1>
+                <div class="item-container">
+                    <div id="lot-1" class="item">
+                        <img src="assets/vo-cuc-kiem.png" width="50" height="50" alt="">
+                    </div>
+                    <div id="lot-2" class="item"></div>
+                    <div id="lot-3" class="item"></div>
+                    <div id="lot-4" class="item"></div>
+                    <div id="lot-5" class="item"></div>
+                    <div id="lot-6" class="item"></div>
+                    <div id="lot-7" class="item"></div>
+                    <div id="lot-8" class="item">
+                    </div>
+                    <div id="lot-9" class="item">
+                        <img src="assets/hp_bottle.png" width="40" height="40" alt="">
+                        <span class="quantity"></span>
+                    </div>
+                    <div id="lot-10" class="item">
+                        <img src="assets/mp_bottle.png" width="40" height="40" alt="">
+                        <span class="quantity">5</span>
+                    </div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+                <div class="gold-container">
+                    <img src="assets/coin.png" width="30" height="30" alt="">
+                    <span class="gold-value">50</span>
+                </div>
+                <div class="skills-container">
+                    <div class="skill">
+                        <div class="skill-image" id="skill-1">
+                            <span class="mana-cost"></span>
+                            <img src="assets/skill1.png" alt="">
+                            <div class="skill-des">
+                                <div class="d-flex space-between">
+                                    <h5 class="skill-name"></h5>
+                                    <h5 class="skill-key">[J]</h5>
+                                </div>
+                                <div class="d-flex space-between">
+                                    <h5 class="skill-mana"></h5>
+                                    <h5 class="skill-cooldown"></h5>
+                                </div>
+                                <div class="skill-text"></div>
+                            </div>
+                            <h3>J</h3>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-image" id="skill-2">
+                            <span class="mana-cost"></span>
+                            <img src="assets/skill2.png" alt="">
+                            <div class="skill-des">
+                                <div class="d-flex space-between">
+                                    <h5 class="skill-name"></h5>
+                                    <h5 class="skill-key">[J]</h5>
+                                </div>
+                                <div class="d-flex space-between">
+                                    <h5 class="skill-mana"></h5>
+                                    <h5 class="skill-cooldown"></h5>
+                                </div>
+                                <div class="skill-text"></div>
+                            </div>
+                            <h3>K</h3>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-image" id="skill-3">
+                            <span class="mana-cost"></span>
+                            <img src="assets/skill3.png" alt="">
+                            <div class="skill-des">
+                                <div class="d-flex space-between">
+                                    <h5 class="skill-name"></h5>
+                                    <h5 class="skill-key">[J]</h5>
+                                </div>
+                                <div class="d-flex space-between">
+                                    <h5 class="skill-mana"></h5>
+                                    <h5 class="skill-cooldown"></h5>
+                                </div>
+                                <div class="skill-text"></div>
+                            </div>
+                            <h3>L</h3>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-image" id="skill-4">
+                            <span class="mana-cost"></span>
+                            <img src="assets/fire-ball.png" width="60" height="60" id="fire-frame" alt="">
+                            <img src="assets/skill4.png" alt="">
+                            <div class="skill-des">
+                                <div class="d-flex space-between">
+                                    <h5 class="skill-name"></h5>
+                                    <h5 class="skill-key"></h5>
+                                </div>
+                                <div class="d-flex space-between">
+                                    <h5 class="skill-mana"></h5>
+                                    <h5 class="skill-cooldown"></h5>
+                                </div>
+                                <div class="skill-text"></div>
+                            </div>
+                            <h3>R</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js.js"></script>
+
+</html>

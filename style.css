@@ -1,0 +1,325 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+
+}
+
+container .game-title {
+    text-align: center;
+    margin: 10px;
+}
+
+#canvas {}
+
+.game-board {
+    position: relative;
+}
+
+.game-menu {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.game-menu ul li {
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 30px;
+    border: 5px solid #E8D55C;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #E8D55C;
+    transition: ease 0.3s;
+}
+
+.level-menu {
+    display: none;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: start !important;
+}
+
+.level-menu li {
+    font-size: 1.5rem !important;
+    margin-right: 1rem;
+    padding: 20px 50px !important;
+    flex: 10;
+}
+
+.level-label {
+    color: white;
+    position: absolute;
+    top: 10px;
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+.game-menu ul li:hover {
+    border: 5px solid white;
+    color: white;
+}
+
+.wraper {
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: ease 0.5s all;
+    visibility: hidden;
+}
+
+.btn {
+    padding: 5px 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: lawngreen;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+}
+
+.game-information {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    background-color: #554546;
+    color: #E8D55C;
+}
+
+.infor-title {
+    text-align: center;
+    color: black;
+    background-color: #E8D55C;
+    width: 50%;
+    margin: 20px auto;
+
+}
+
+.stat-item {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-value {
+    margin-left: 40px;
+    padding: 0 40px;
+    background-color: #3F3537;
+    color: white;
+    animation: bounce;
+    --animate-duration: 0.5s;
+}
+
+.stat-item p {
+    margin: 5px;
+}
+
+h4 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.ball-stats {
+    margin-right: 30px;
+}
+
+.item-container {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 5px;
+}
+
+.item {
+    border-radius: 2px;
+    border: 1px solid white;
+    position: relative;
+}
+
+.quantity {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: yellow;
+
+    font-size: 1.2rem;
+}
+
+.hp::before {
+    content: "HP";
+    position: absolute;
+    left: -30px;
+    top: -5;
+}
+
+.mp::before {
+    content: "MP";
+    position: absolute;
+    left: -30px;
+    top: -5;
+}
+
+.bar {
+    width: 100%;
+    height: 8px;
+    background-color: grey;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.bar-container {
+
+    position: relative;
+    border-radius: 10px;
+    margin: 20px 0 0 0;
+    padding: 0 50px;
+    width: 60%;
+    height: 3px;
+}
+
+.hp-bar-real {
+    width: 100%;
+    height: 8px;
+    background-color: red;
+    transition: ease 0.3s all;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.mp-bar-real {
+    width: 100%;
+    height: 8px;
+    transition: ease 0.3s all;
+    background-color: darkblue;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.gold-value {
+    font-size: 2rem;
+}
+
+.skills-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+
+#fire-frame {
+    position: absolute;
+    left: 5;
+    top: -45;
+    opacity: 0.9;
+}
+
+.skill {
+    text-align: center;
+    margin-right: 10px;
+}
+
+.skill-image {
+    position: relative;
+    cursor: pointer;
+}
+
+.skill-image h3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.skill-image::before {
+    content: "";
+    background: conic-gradient(rgba(0, 0, 0, 0.7) var(--time-left),
+        rgba(0, 0, 0, 0.1) var(--time-left));
+    position: absolute;
+    opacity: 0.9;
+    top: 0;
+    left: 0p;
+    height: 100%;
+    width: 100%;
+}
+
+.skill h3 {
+    margin: 5px 0 0 0;
+    color: white;
+    font-size: 2ren;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mana-cost {
+    position: absolute;
+    z-index: 11;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 0;
+    top: -5;
+    color: white;
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+.skill-des {
+    position: absolute;
+    top: -200px;
+    left: -50;
+    width: 300px;
+    height: 200px;
+    display: none;
+    color: white;
+    padding: 5px;
+    z-index: 22;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+h5 {
+    margin: 0;
+}
+
+.skill-des .skill-name,
+.skill-key {
+    margin: 0;
+    color: #E8D55C;
+    font-size: 1.4rem;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.skill-text {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.skill-cast {
+    position: absolute;
+    color: red;
+    font-size: 2.5rem;
+    font-weight: bold;
+    -webkit-text-stroke: 2px white;
+    --animate-duration: 2s;
+}
