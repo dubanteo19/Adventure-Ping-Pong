@@ -8,57 +8,68 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tac+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
-    <div class="container">
-        <div class="game-board">
-            <div class="level-label">Level: 1</div>
-            <div class="game-menu">
-                <ul class="main-menu">
-                    <li data-target="continue">Tiếp tục</li>
-                    <li data-target="levels">Chọn level</li>
-                    <li data-target="tutorial">Hướng dẫn</li>
-                    <li data-target="about-me">Giới thiệu</li>
-                </ul>
-                <ul class="level-menu">
-                    <li data-level=1>Level 1</li>
-                    <li data-level=2>Level 2</li>
-                    <li data-level=3>Level 3</li>
-                    <li data-level=4>Level 4</li>
-                    <li data-level=5>Level 5</li>
-                    <li data-level=6>Level 6</li>
-                    <li class="back" data-level=back>Quay lại</li>
-                </ul>
-                <div class="intro d-none">
-                    <h3>Em tôi là Dư Thành Minh, mã số sinh viên 21130444 là sinh viên công nghệ thông tin trường Đại học Nông Lâm thành Phố Hồ Chí Minh.</h3>
-                    <btn class="back">Quay lại</btn>
-                </div>
+<div class="game-container">
+    <div class="game-board">
+        <div class="level-label">Level: 1</div>
+        <div class="game-menu">
+            <ul class="main-menu">
+                <li data-target="continue">Tiếp tục</li>
+                <li data-target="levels">Chọn level</li>
+                <li data-target="tutorial">Hướng dẫn</li>
+                <li data-target="about-me">Giới thiệu</li>
+            </ul>
+            <ul class="level-menu">
+                <li data-level=1>Level 1</li>
+                <li data-level=2>Level 2</li>
+                <li data-level=3>Level 3</li>
+                <li data-level=4>Level 4</li>
+                <li data-level=5>Level 5</li>
+                <li data-level=6>Level 6</li>
+                <li class="back" data-level=back>Quay lại</li>
+            </ul>
+            <div class="intro d-none">
+                <h3>Em tôi là Dư Thành Minh, mã số sinh viên 21130444 là sinh viên công nghệ thông tin trường Đại học
+                    Nông Lâm thành Phố Hồ Chí Minh.</h3>
+                <btn class="back">Quay lại</btn>
             </div>
-            <div class="notify d-none">
-                <h1 class="p-5">Chúc mừng bạn đã mở khóa kỹ năng trấn phái tuyệt đỉnh</h1>
-                <div class="skill ">
-                    <div class="skill-image">
-                        <span class="mana-cost"></span>
-                        <img src="assets/thai-cuc-quyen.png" width="150" height="150" alt="">
-                        <div class="skill-desz">
-                            <div class="d-flex space-between">
-                                <h2 class="skill-name">
-                                    <h5 class="skill-key"></h5>
-                                    Khi khai sinh thái cực sức mạnh vô biên, những lực lượng tối thượng của tự nhiên hòa quyện vào nhau, tạo nên một cơn sóng năng lượng mênh mông. Đại dương rộng lớn bắt đầu gợn sóng cao ngút trời, núi non hiên ngang biến thành khối sức mạnh không thể di dời.
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn">Đã hiểu</button>
-                </div>
-            </div>
-            <canvas width="900" height="620" id="canvas"></canvas>
-            <div class="wraper">
-                <img id="screen-img" src="" width="900" height="620" alt="">
+            <div class="tutorial d-none">
+                <iframe width="900" height="450" src="https://www.youtube.com/embed/absPHyPhaaY"
+                        title="Demo game Ping Pong - Dư Thành Minh - 21130444" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <btn class="back">Quay lại</btn>
             </div>
         </div>
+        <div class="notify d-none">
+            <h1 class="p-5">Chúc mừng bạn đã mở khóa kỹ năng trấn phái tuyệt đỉnh</h1>
+            <div class="skill ">
+                <div class="skill-image">
+                    <span class="mana-cost"></span>
+                    <img src="assets/thai-cuc-quyen.png" width="150" height="150" alt="">
+                    <div class="skill-desz">
+                        <div class="d-flex space-between">
+                            <h2 class="skill-name">
+                                <h5 class="skill-key"></h5>
+                                Khi khai sinh thái cực sức mạnh vô biên, những lực lượng tối thượng của tự nhiên hòa
+                                quyện vào nhau, tạo nên một cơn sóng năng lượng mênh mông. Đại dương rộng lớn bắt đầu
+                                gợn sóng cao ngút trời, núi non hiên ngang biến thành khối sức mạnh không thể di dời.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn">Đã hiểu</button>
+            </div>
+        </div>
+        <canvas width="900" height="620" id="canvas"></canvas>
+        <div class="wraper">
+            <img id="screen-img" src="" width="900" height="620" alt="">
+        </div>
+    </div>
+    <div class="container">
         <div class="game-information">
             <div class="lives">
                 <canvas id="life-canvas" width="400" height="30"></canvas>
@@ -285,7 +296,7 @@
                     <div id="lot-5" class="item"></div>
                     <div id="lot-6" class="item"></div>
                     <div id="lot-7" class="item"></div>
-                    <div id="lot-8" class="item"> </div>
+                    <div id="lot-8" class="item"></div>
                 </div>
                 <div class="item-container bag-2">
                     <div id="lot-9" class="item"></div>
@@ -296,7 +307,7 @@
                     <div id="lot-14" class="item">
                     </div>
                     <div id="lot-15" class="item"></div>
-                    <div id="lot-16" class="item"> </div>
+                    <div id="lot-16" class="item"></div>
                 </div>
             </div>
             <div class="gold-container">
@@ -382,7 +393,6 @@
                 <div class="skill d-none">
                     <div class="skill-image" id="skill-5">
                         <span class="mana-cost"></span>
-                        <img src="assets/fire-ball.png" width="60" height="60" id="fire-frame" alt="">
                         <img src="assets/thai-cuc-quyen.png" width="60" height="60" alt="">
                         <div class="skill-des">
                             <div class="d-flex space-between">
@@ -401,9 +411,11 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
+</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 <script type="text/javascript" src="js.js"></script>
 
 </html>

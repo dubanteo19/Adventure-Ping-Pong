@@ -24,7 +24,7 @@ let BALL_DAME = 10;
 let BALL_RADIUS = 10;
 let LIFE = 3;
 let PAUSED = true;
-let coins = 2000;
+let coins = 10;
 // let ballSpawnRate = 0.2;
 let PADDLE_HP_REGEN = 0.02;
 let PADDLE_MP_REGEN = 0.02;
@@ -32,7 +32,7 @@ let PADDLE_SPEED = 10;
 let PADDLE_SIZE = 100;
 let CritRate = 0.1;
 let SPHERE_DROP_RATE = 0.00005;
-let dropRate = 10;
+let dropRate = 0.05;
 let LEVEL = 1;
 let requestID;
 let poitionInterval = [];
@@ -49,17 +49,17 @@ let spheres;
 
 
 /**
-    Map các kỹ năng có trong trò chơi
+ Map các kỹ năng có trong trò chơi
  * */
 let skills = [{
-        skillName: "Đại phân thân chi pháp",
-        key: "J",
-        des: "Ngay lập tức triệu hồi 3 quả cầu bay lên trên trời",
-        isSkillCoolDown: false,
-        coolDown: 10,
-        manaCost: 40,
-        isUnlocked: true,
-    },
+    skillName: "Đại phân thân chi pháp",
+    key: "J",
+    des: "Ngay lập tức triệu hồi 5 quả cầu bay lên trên trời",
+    isSkillCoolDown: false,
+    coolDown: 10,
+    manaCost: 40,
+    isUnlocked: true,
+},
     {
         skillName: "Cường hóa vũ trang",
         key: "K",
@@ -92,7 +92,7 @@ let skills = [{
         isSkillCoolDown: false,
         coolDown: 1,
         manaCost: 100,
-        isUnlocked: true,
+        isUnlocked: false,
     }
 
 ];
@@ -100,20 +100,20 @@ let skills = [{
  * Item tồn tại trong game
  * */
 let shopItems = [{
-        id: "i1",
-        name: "Vô cực kiếm ",
-        price: 40,
-        img: "assets/item/vo-cuc-kiem.png",
-        des: "Khi trang bị người chơi nhận được 20 điểm sức mạnh",
-        dame: 20,
-    }, {
-        id: "i2",
-        name: "Dạ minh châu",
-        price: 40,
-        img: "assets/item/da-minh-chau.png",
-        des: "Dạ minh châu huyền bí có sức mạnh phục hồi phi thường, ai sở hữu sẽ được 30% điểm hồi máu",
-        hpRegen: 0.3,
-    },
+    id: "i1",
+    name: "Vô cực kiếm ",
+    price: 40,
+    img: "assets/item/vo-cuc-kiem.png",
+    des: "Khi trang bị người chơi nhận được 20 điểm sức mạnh",
+    dame: 20,
+}, {
+    id: "i2",
+    name: "Dạ minh châu",
+    price: 40,
+    img: "assets/item/da-minh-chau.png",
+    des: "Dạ minh châu huyền bí có sức mạnh phục hồi phi thường, ai sở hữu sẽ được 30% điểm hồi máu",
+    hpRegen: 0.3,
+},
     {
         id: "i3",
         name: "Giày tăng tốc",
@@ -175,7 +175,7 @@ let shopItems = [{
         name: "Bình mana",
         img: "assets/mp_bottle.png",
         price: 10,
-        des: "Lập tức hồi phục 20 máu",
+        des: "Lập tức hồi phục 20 mana",
     },
     {
         id: "i11",
@@ -203,15 +203,16 @@ let shopItems = [{
 let inventories = {
     bag1: [],
     bag2: [{
-            id: "i9",
-            quantity: 3
-        },
+        id: "i9",
+        quantity: 3
+    },
         {
             id: "i10",
             quantity: 3
         }
     ]
 };
+
 /**
  *Các đối tượng trong game
  * */
@@ -221,24 +222,29 @@ class Point {
         this.x = x;
         this.y = y;
     }
+
     distance(thatPoint) {
         let dx = this.x - thatPoint.x;
         let dy = this.y - thatPoint.y;
         return Math.sqrt(dx * dx + dy * dy);
     }
 }
+
 class Velocity {
     constructor(vX, vY) {
         this.vX = vX;
         this.vY = vY;
     }
+
     reverseX() {
         this.vX *= -1;
     }
+
     reverseY() {
         this.vY *= -1;
     }
 }
+
 class Shape {
     constructor(point, velocity) {
         this.point = point;
@@ -246,10 +252,12 @@ class Shape {
         this.opacity = 1;
         this.color = "255,255,0";
     }
+
     update() {
         this.point.x += this.velocity.vX;
         this.point.y += this.velocity.vY;
     }
+
     fadeOut(seconds) {
         let times = 10;
         let count = 0;
@@ -260,6 +268,7 @@ class Shape {
         }, (seconds * 1000) / times);
     }
 }
+
 class Paddle extends Shape {
     constructor(point, velocity, width, height) {
         super(point, velocity);
@@ -270,6 +279,7 @@ class Paddle extends Shape {
         this.mp = 100;
         this.darkRes = false;
     }
+
     draw() {
         ctx.fillStyle = `rgba(${this.color},${this.opacity})`;
         ctx.fillRect(this.point.x, this.point.y, this.width, this.height);
@@ -278,9 +288,11 @@ class Paddle extends Shape {
             ctx.fillRect(this.point.x, this.point.y - 10, this.width, 4);
         }
     }
+
     getCenterPoint() {
         return new Point(this.point.x + (this.width / 2), this.point.y + (this.height / 2));
     }
+
     resetStat() {
         PADDLE_HP_REGEN = 0.02;
         PADDLE_MP_REGEN = 0.02;
@@ -290,6 +302,7 @@ class Paddle extends Shape {
         dropRate = 0.05;
         BALL_DAME = 10;
     }
+
     dePoition() {
         for (let i = 0; i < poitionInterval.length; i++) {
             clearInterval(poitionInterval[i]);
@@ -297,6 +310,7 @@ class Paddle extends Shape {
         }
         $(".wraper").css("visibility", "hidden");
     }
+
     updateHp() {
         this.hp += PADDLE_HP_REGEN;
         if (this.hp <= 0) {
@@ -308,47 +322,69 @@ class Paddle extends Shape {
             this.hp = 100;
         }
     }
+
     updateMp() {
         this.mp += PADDLE_MP_REGEN;
         if (this.mp >= 100) {
             this.mp = 100;
         }
     }
+
     update() {
         this.checkBallCollied();
         this.updateHp();
         this.updateMp();
         this.width = PADDLE_SIZE;
-        if (keyPressed[2]) { this.point.x -= this.velocity.vX; }
-        if (keyPressed[3]) { this.point.x += this.velocity.vX; }
-        if (keyPressed[4]) { this.width += 5; }
+        if (keyPressed[2]) {
+            this.point.x -= this.velocity.vX;
+        }
+        if (keyPressed[3]) {
+            this.point.x += this.velocity.vX;
+        }
+        if (keyPressed[4]) {
+            this.width += 5;
+        }
     }
+
     checkBallCollied() {
-        if (this.point.x <= 0) { this.point.x = 0; } else if (this.point.x >= canvas.width - this.width) {
+        if (this.point.x <= 0) {
+            this.point.x = 0;
+        } else if (this.point.x >= canvas.width - this.width) {
             this.point.x = canvas.width - this.width;
         }
     }
 }
+
 class Ball extends Shape {
     constructor(point, velocity, radius) {
         super(point, velocity);
         this.radius = radius;
         this.type = 0;
     }
+
     draw() {
         drawCircle
-            (this.point.x, this.point.y, this.radius,
-                `rgba(${this.color},${this.opacity}`);
+        (this.point.x, this.point.y, this.radius,
+            `rgba(${this.color},${this.opacity}`);
     }
+
     getBottom() {
         return this.point.y + this.radius;
     }
+
     getTop() {
         return this.point.y - this.radius;
     }
-    getRight() { return this.point.x + this.radius; }
-    getLeft() { return this.point.x - this.radius; }
+
+    getRight() {
+        return this.point.x + this.radius;
+    }
+
+    getLeft() {
+        return this.point.x - this.radius;
+    }
 }
+
 class Effect {
     constructor(text, value, color, type) {
         this.text = text;
@@ -357,12 +393,14 @@ class Effect {
         this.type = type;
     }
 }
+
 class Item extends Shape {
     constructor(point) {
         super(point, new Velocity(0, 3));
         this.radius = 18;
         this.effect = this.randomEffect();
     }
+
     randomEffect() {
         let random = Math.random();
         if (random > 0.5) {
@@ -379,6 +417,7 @@ class Item extends Shape {
             return new Effect("x5", 5, "orange", "*");
         }
     }
+
     draw() {
         ctx.beginPath();
         ctx.arc(this.point.x, this.point.y, this.radius, 0, 2 * Math.PI);
@@ -391,6 +430,7 @@ class Item extends Shape {
         ctx.fillText(this.effect.text, this.point.x, this.point.y + 3);
 
     }
+
     activateEffect() {
         switch (this.effect.type) {
             case "+":
@@ -404,6 +444,7 @@ class Item extends Shape {
                 break;
         }
     }
+
     colliedWithPaddle(paddle) {
         let xCollied =
             (Math.abs(this.point.x - paddle.getCenterPoint().x) - this.radius -
@@ -416,17 +457,20 @@ class Item extends Shape {
         }
         return false;
     }
+
     isOutGame() {
         return this.point.y > canvas.height + 20;
     }
 
 }
+
 class Sphere extends Shape {
     constructor(point) {
         super(point, new Velocity(0, 5));
         this.width = 30;
         this.image = null;
     }
+
     setImage(image) {
         this.image = image;
     }
@@ -434,6 +478,7 @@ class Sphere extends Shape {
     draw() {
         ctx.drawImage(this.image, this.point.x, this.point.y, this.width, this.width);
     }
+
     isColliedWithPaddle(paddle) {
         let xCollied =
             (Math.abs(this.point.x - paddle.getCenterPoint().x) - this.width -
@@ -445,16 +490,19 @@ class Sphere extends Shape {
         }
         return false;
     }
+
     isOutGame() {
         return this.point.y > canvas.height + 20;
     }
 }
+
 class Fire extends Sphere {
     constructor(point) {
         super(point, new Velocity(0, 5));
         this.damage = 30;
         this.setImage(fireImg);
     }
+
     colliedWithPaddle(paddle) {
         if (this.isColliedWithPaddle(paddle)) {
             if (!paddle.bkb) {
@@ -467,12 +515,14 @@ class Fire extends Sphere {
         return false;
     }
 }
+
 class Ice extends Sphere {
     constructor(point) {
         super(point, new Velocity(0, 5));
         this.damage = 5;
         this.setImage(iceImg);
     }
+
     colliedWithPaddle(paddle) {
         if (this.isColliedWithPaddle(paddle)) {
             if (!paddle.bkb) {
@@ -501,6 +551,7 @@ class Poition extends Sphere {
         this.damage = 5;
         this.setImage(poitionImg);
     }
+
     colliedWithPaddle(paddle) {
         if (this.isColliedWithPaddle(paddle)) {
             if (!paddle.bkb) {
@@ -535,12 +586,14 @@ class Poition extends Sphere {
         return false;
     }
 }
+
 class Dark extends Sphere {
     constructor(point) {
         super(point, new Velocity(0, 5));
         this.damage = 5;
         this.setImage(darkImg);
     }
+
     colliedWithPaddle(paddle) {
         if (this.isColliedWithPaddle(paddle)) {
             if (!paddle.darkRes && !paddle.bkb) {
@@ -570,9 +623,11 @@ class Coin extends Sphere {
         this.velocity.vY = this.getRandomValue(5) + (this.value - 5);
         this.setImage(coinImg);
     }
+
     getRandomValue(max) {
         return Math.ceil(Math.random() * max);
     }
+
     colliedWithPaddle(paddle) {
         if (this.isColliedWithPaddle(paddle)) {
             coins += this.value;
@@ -593,6 +648,7 @@ class Brick extends Shape {
         this.maxHp = BRICK_HP;
         this.dropSphereRate = SPHERE_DROP_RATE;
     }
+
     configureLevel(level) {
         if (level === 2) {
             this.width = BRICK_WIDTH * 3;
@@ -603,12 +659,14 @@ class Brick extends Shape {
 
         }
     }
+
     draw() {
         ctx.fillStyle = "grey";
         ctx.fillRect(this.point.x, this.point.y, this.width, this.height);
         ctx.fillStyle = this.color;
         ctx.fillRect(this.point.x, this.point.y, this.width * (this.hp / this.maxHp), this.height);
     }
+
     /**
      * Check if this brick collied with a given ball;
      * **/
@@ -633,9 +691,11 @@ class Brick extends Shape {
         }
         return false;
     }
+
     collied(balls) {
         return balls.some(ball => this.colliedWithBall(ball));
     }
+
     animate() {
         let interval;
         let count = 0;
@@ -647,9 +707,11 @@ class Brick extends Shape {
             if (count == 10) clearInterval(interval);
         }, 200);
     }
+
     dropCoin() {
         spheres.push(new Coin(new Point(this.point.x, this.point.y)));
     }
+
     dropSphere() {
         if (Math.random() < this.dropSphereRate) {
             this.animate();
@@ -675,6 +737,7 @@ class Brick extends Shape {
         }
     }
 }
+
 class Dragon extends Brick {
     constructor(point, hp) {
         super(point, null);
@@ -684,13 +747,15 @@ class Dragon extends Brick {
         this.type = 1;
         this.image = this.loadImg();
         this.maxHp = this.hp;
-        this.dropSphereRate = SPHERE_DROP_RATE*10;
+        this.dropSphereRate = SPHERE_DROP_RATE * 10;
     }
+
     loadImg() {
         const image = new Image(this.width, this.height); // Using optional size for image
         image.src = "assets/dragon.png";
         return image;
     }
+
     draw() {
         ctx.fillStyle = "grey";
         ctx.fillRect(this.point.x, this.point.y, this.width, 10);
@@ -698,6 +763,7 @@ class Dragon extends Brick {
         ctx.fillRect(this.point.x, this.point.y, this.width * (this.hp / this.maxHp), 10);
         ctx.drawImage(this.image, this.point.x, this.point.y, this.width, this.height);
     }
+
     useSkills(skill) {
         switch (skill) {
             case 1:
@@ -718,6 +784,7 @@ class Dragon extends Brick {
                 break;
         }
     }
+
     dropSphere() {
         if (Math.random() < this.dropSphereRate) {
             this.animate();
@@ -783,14 +850,17 @@ function configure(level) {
     spheres = [];
     updateStats();
 }
+
 configure(1);
 
 init("Press space to start");
+
 /**
-        Cấu hình khởi tạo game
+ Cấu hình khởi tạo game
  * */
 function init(title) {
     updateStats();
+    updateInventories();
     ctx.fillStyle = "rgba(0,0,0,1)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "yellow";
@@ -972,8 +1042,9 @@ function checkBricksCollied() {
         bricks = fillterdBricks;
     }
 }
+
 /**
-        Kiểm tra va chạm
+ Kiểm tra va chạm
  * */
 function checkItemCollied() {
     let fillterdItems = items.filter(item => {
@@ -993,6 +1064,7 @@ function checkSpheresCollied() {
         spheres = fillterdspheres;
     }
 }
+
 /**
  * Du Thanh Minh - 21130444 - DH21DTC
  * */
@@ -1007,6 +1079,7 @@ function checkLose() {
         ctx.fillStyle = "black";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         cancelAnimationFrame(requestID);
+        loseAnimate();
         LIFE = 3;
     }
 }
@@ -1021,8 +1094,26 @@ function renderText(text, row) {
     }, 70);
 }
 
-function passLevelAnimate() {
+function loseAnimate() {
+    let count = 0;
+    let interval2 = setInterval(() => {
+        renderText(texts[count], count);
+        if (count++ >= texts.length) clearInterval(interval2);
+    }, 2500);
+    let width = 10;
+    let interval = setInterval(() => {
+        ctx.fillStyle = getColor(LEVEL);
+        ctx.fillRect(0, 0, width, canvas.height);
+        width += 10;
+        if (width >= canvas.width + 10) clearInterval(interval);
+    }, 15);
+    let texts = ["Ha ha ta là vô địch thiên hạ",
+        "Muốn đánh bại ta ư? Hãy mơ đi"
+    ];
 
+}
+
+function passLevelAnimate() {
     let count = 0;
     let interval2 = setInterval(() => {
         renderText(texts[count], count);
@@ -1176,7 +1267,7 @@ function updateStats() {
     $(".gold-value").text(coins);
     $("#damage-atk").text(BALL_DAME);
     $("#speed").text(PADDLE_SPEED);
-    $("#crit-rate").text(CritRate);
+    $("#crit-rate").text(CritRate * 100 + "%");
     $("#width").text(PADDLE_SIZE);
     $("#primary-radius").text(BALL_RADIUS);
     $("#item-drop-rate").text(dropRate * 100 + "%");
@@ -1235,6 +1326,7 @@ function draw() {
     });
 
 }
+
 /**
  * Du Thanh Minh - 21130444 - DH21DTC
  * */
@@ -1290,6 +1382,7 @@ function useItem(lot) {
             if (quantity > 0) {
                 castSkill("Đại cuồng phong", false);
                 let noneCoinsSpheres = spheres.filter((s) => s.constructor.name !== "Coin");
+                item.quantity--;
                 noneCoinsSpheres.forEach(s => {
                     s.velocity.reverseY();
                 });
@@ -1311,7 +1404,6 @@ function castSkill(skillName, isUlti) {
     skillE.text(skillName);
     let fontSize = isUlti ? "3.5rem" : "2.5rem";
     skillE.css("left", isUlti ? 200 : 300);
-
     skillE.css("font-size", fontSize);
     skillE.css("bottom", 50);
     if (skillName.includes('Crit')) {
@@ -1320,13 +1412,12 @@ function castSkill(skillName, isUlti) {
     $(".game-board").append(skillE);
     setTimeout(() => {
         $(".skill-cast").remove();
-    }, 2000);
-
+    }, 5000);
 }
 
 /**
  * Ham xu ly khi nguoi dung su dung skill
- * Neu nhu skill co kha thuc thi 
+ * Neu nhu skill co kha thuc thi
  **/
 function useSkill(skill) {
     if (PAUSED) return;
@@ -1565,6 +1656,7 @@ function loop() {
         draw();
     }
 }
+
 $(document).on("keydown", event => {
     let key = event.key;
     if (key === "s") {
@@ -1597,7 +1689,8 @@ $(document).on("keydown", event => {
         useItem(4);
     } else if (key === "Escape") {
         pause();
-    } else if (key === " ") {}
+    } else if (key === " ") {
+    }
 });
 $(document).on("keyup", event => {
     let key = event.key;
@@ -1638,8 +1731,10 @@ $(".main-menu li").click((event) => {
             $(".main-menu").hide();
             $(".intro").show();
             break;
-
-
+        case "tutorial":
+            $(".main-menu").hide();
+            $(".tutorial").show();
+            break;
         default:
             // statements_def
             break;
@@ -1648,6 +1743,7 @@ $(".main-menu li").click((event) => {
 $(".back").click(() => {
     $(".level-menu").hide();
     $(".intro").hide();
+    $(".tutorial").hide();
     $(".main-menu").show();
 });
 $(".level-menu li").click((event) => {
@@ -1696,7 +1792,7 @@ function buyItem(id, bag) {
     if (coins >= targetItem.price) {
         if (bag === "bag1" && !isExist) {
             coins -= targetItem.price;
-            inventoryBag.push({ id: targetItem.id, quantity: 1 });
+            inventoryBag.push({id: targetItem.id, quantity: 1});
             updateInventories();
             updateStats();
         } else if (bag === "bag2") {
@@ -1705,7 +1801,7 @@ function buyItem(id, bag) {
             let currentQuantity = currentItem !== undefined ? currentItem.quantity : 0;
             let quantity = isExist ? currentQuantity + 1 : 1;
             if (currentItem === undefined) {
-                inventoryBag.push({ id: targetItem.id, quantity: quantity });
+                inventoryBag.push({id: targetItem.id, quantity: quantity});
             } else {
                 currentItem.quantity = quantity;
             }
@@ -1730,6 +1826,7 @@ function renderShopItems() {
 
     });
 }
+
 $(".btn").click(() => {
     $(".notify").hide();
 });

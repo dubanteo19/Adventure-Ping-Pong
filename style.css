@@ -4,16 +4,23 @@ body {
     font-family: "Play", sans-serif;
     font-weight: 400;
     font-style: normal;
-    overflow: hidden;
-
+    /*overflow: hidden;*/
 }
 
-container .game-title {
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url("assets/bg.jpg");
+}
+
+.container .game-title {
     text-align: center;
     margin: 10px;
 }
-
-#canvas {}
+#canvas {
+}
 
 .game-board {
     position: relative;
@@ -53,7 +60,6 @@ container .game-title {
 }
 
 
-
 .game-menu ul li,
 btn {
     list-style: none;
@@ -73,6 +79,13 @@ btn {
 .intro btn {
     position: absolute;
     left: 350px;
+}
+.tutorial btn {
+    position: absolute;
+    left: 350px;
+    top: 540px;
+    font-size: 1.5rem;
+
 }
 
 .level-menu {
@@ -122,6 +135,7 @@ btn {
 
 .container {
     display: flex;
+
 }
 
 .game-information {
@@ -129,6 +143,7 @@ btn {
     flex-direction: column;
     padding: 20px;
     width: 100%;
+    height: 580px;
     background-color: #554546;
     color: #E8D55C;
 }
@@ -283,7 +298,7 @@ h4 {
 .skill-image::before {
     content: "";
     background: conic-gradient(rgba(0, 0, 0, 0.7) var(--time-left),
-        rgba(0, 0, 0, 0.1) var(--time-left));
+    rgba(0, 0, 0, 0.1) var(--time-left));
     position: absolute;
     opacity: 0.9;
     top: 0;
@@ -295,7 +310,7 @@ h4 {
 .skill h3 {
     margin: 5px 0 0 0;
     color: white;
-    font-size: 2ren;
+    font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
 }
 
