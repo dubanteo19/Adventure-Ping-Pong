@@ -60,8 +60,8 @@ let skills = [{
     key: "J",
     des: "Ngay lập tức triệu hồi 5 quả cầu bay lên trên trời",
     isSkillCoolDown: false,
-    coolDown: 0,
-    manaCost: 0,
+    coolDown: 15,
+    manaCost: 30,
     isUnlocked: true,
 },
     {
