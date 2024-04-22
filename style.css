@@ -6,7 +6,9 @@ body {
     font-style: normal;
     /*overflow: hidden;*/
 }
-
+.pay-icon{
+    cursor: pointer;
+}
 .game-container {
     display: flex;
     justify-content: center;

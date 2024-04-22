@@ -16,6 +16,10 @@ let lifeImg = new Image();
 lifeImg.src = "assets/heart.png";
 let coinImg = new Image();
 coinImg.src = "assets/coin.png";
+let yingYangImg = new Image();
+yingYangImg.src = "assets/ying-yang.png";
+let sunImg = new Image();
+sunImg.src = "assets/sun.png";
 let keyPressed = [];
 const BRICK_WIDTH = 70;
 const BRICK_HEIGHT = 20;
@@ -56,8 +60,8 @@ let skills = [{
     key: "J",
     des: "Ngay lập tức triệu hồi 5 quả cầu bay lên trên trời",
     isSkillCoolDown: false,
-    coolDown: 10,
-    manaCost: 40,
+    coolDown: 0,
+    manaCost: 0,
     isUnlocked: true,
 },
     {
@@ -82,7 +86,7 @@ let skills = [{
         key: "R",
         des: "Lập tức vận khí công triệu hồi một đại thái dương sức mạnh không thể cản phá bay lên trời và nổ tung sau đó gây một lượng sát thương cực kỳ to lớn",
         isSkillCoolDown: false,
-        coolDown: 1,
+        coolDown: 60,
         manaCost: 80,
         isUnlocked: false,
     }, {
@@ -90,9 +94,9 @@ let skills = [{
         key: "T",
         des: "Khai sinh thái cực sức mạnh vô biên, một khi triển khai thì long trời lỡ đất",
         isSkillCoolDown: false,
-        coolDown: 1,
+        coolDown: 60,
         manaCost: 100,
-        isUnlocked: false,
+        isUnlocked: true,
     }
 
 ];
@@ -360,12 +364,17 @@ class Ball extends Shape {
         super(point, velocity);
         this.radius = radius;
         this.type = 0;
+        this.image = null;
     }
 
     draw() {
-        drawCircle
-        (this.point.x, this.point.y, this.radius,
-            `rgba(${this.color},${this.opacity}`);
+        if (this.image !== null) {
+            ctx.drawImage(this.image, this.point.x - this.radius * 3, this.point.y - this.radius * 3, this.radius * 6, this.radius * 6);
+        } else {
+            drawCircle
+            (this.point.x, this.point.y, this.radius,
+                `rgba(${this.color},${this.opacity}`);
+        }
     }
 
     getBottom() {
@@ -686,7 +695,7 @@ class Brick extends Shape {
             } else if (ball.type === 3) {
                 balls = balls.filter(i => i.point.x !== ball.point.x);
             }
-            this.hp -= (BALL_DAME / 2);
+            this.hp -= (BALL_DAME * 2);
             return true;
         }
         return false;
@@ -747,7 +756,7 @@ class Dragon extends Brick {
         this.type = 1;
         this.image = this.loadImg();
         this.maxHp = this.hp;
-        this.dropSphereRate = SPHERE_DROP_RATE * 10;
+        this.dropSphereRate = SPHERE_DROP_RATE * 2;
     }
 
     loadImg() {
@@ -776,7 +785,7 @@ class Dragon extends Brick {
                     fire.width = 70;
                     spheres.push(fire);
                     i++;
-                    if (i > 10) clearInterval(interval);
+                    if (i > 5) clearInterval(interval);
                 }, 200);
                 break;
             default:
@@ -795,8 +804,48 @@ class Dragon extends Brick {
                 // useSkill(randomSkill);
                 this.useSkills(1);
             }, 3000);
-
+        } else if (Math.random() < this.dropSphereRate * 10) {
+            let randomX = Math.ceil(Math.random() * this.width - 50) + 20;
+            let fire = new Fire(new Point(randomX, this.point.y + 100));
+            fire.width = 20;
+            spheres.push(fire);
         }
+    }
+
+    function
+
+    animateHit() {
+        let count = 0;
+        let interval = setInterval(() => {
+            ctx.fillStyle = "rgba(255,0,0, 0.8)";
+            ctx.fillRect(this.point.x, this.point.y, this.width, this.height);
+            ctx.fillStyle = "rgba(255,0,0, 0.1)";
+            ctx.fillRect(this.point.x, this.point.y, this.width, this.height);
+            if (count++ >= 2) clearInterval(interval);
+        }, 50)
+    }
+
+    colliedWithBall(ball) {
+        let nearestX = Math.max(this.point.x, Math.min(ball.point.x, this.point.x + this.width));
+        let nearestY = Math.max(this.point.y, Math.min(ball.point.y, this.point.y + this.height));
+        let nearestPoint = new Point(nearestX, nearestY);
+        let distance = ball.point.distance(nearestPoint);
+        if (distance <= ball.radius) {
+            this.animateHit();
+            if (ball.type === 0) {
+                ball.velocity.reverseY();
+                ball.point.y += ball.point.y > this.point.y ? 5 : -5;
+                dropItem(this.point.x, this.point.y);
+                let isCritDame = Math.random() < CritRate;
+                this.hp -= isCritDame ? BALL_DAME * 2 : BALL_DAME;
+                if (isCritDame) castSkill("Crit damage:" + BALL_DAME * 2, false);
+            } else if (ball.type === 3) {
+                balls = balls.filter(i => i.point.x !== ball.point.x);
+            }
+            this.hp -= (BALL_DAME * 2);
+            return true;
+        }
+        return false;
     }
 }
 
@@ -830,10 +879,16 @@ function configure(level) {
             skills[3].isUnlocked = true;
             break;
         case 5:
+            skills[1].isUnlocked = true;
+            skills[2].isUnlocked = true;
+            skills[3].isUnlocked = true;
             BRICK_HP = 200;
             SPHERE_DROP_RATE = 0.0002;
             break;
         case 6:
+            skills[1].isUnlocked = true;
+            skills[2].isUnlocked = true;
+            skills[3].isUnlocked = true;
             BRICK_HP = 500;
             SPHERE_DROP_RATE = 0.0002;
             break;
@@ -1087,17 +1142,17 @@ function checkLose() {
 function renderText(text, row) {
     let count = 0;
     let interval2 = setInterval(() => {
+        if (count >= text.length - 1) clearInterval(interval2);
         ctx.fillStyle = "black";
         ctx.font = "30px serif";
         ctx.fillText(text[count++], 50 + count * 23, 300 + (row * 50));
-        if (count >= text.length) clearInterval(interval2);
     }, 70);
 }
 
 function loseAnimate() {
     let count = 0;
     let interval2 = setInterval(() => {
-        renderText(texts[count], count);
+        renderText(texts2[count], count);
         if (count++ >= texts.length) clearInterval(interval2);
     }, 2500);
     let width = 10;
@@ -1107,7 +1162,7 @@ function loseAnimate() {
         width += 10;
         if (width >= canvas.width + 10) clearInterval(interval);
     }, 15);
-    let texts = ["Ha ha ta là vô địch thiên hạ",
+    let texts2 = ["Ha ha ta là vô địch thiên hạ",
         "Muốn đánh bại ta ư? Hãy mơ đi"
     ];
 
@@ -1115,10 +1170,16 @@ function loseAnimate() {
 
 function passLevelAnimate() {
     let count = 0;
+    let texts = ["Nhà ngươi khá lắm, đừng vội mừng ",
+        "Ta sẽ còn gặp ngươi lần sau"
+    ];
     let interval2 = setInterval(() => {
-        renderText(texts[count], count);
-        if (count++ >= texts.length) clearInterval(interval2);
-    }, 2500);
+        if (count >= texts.length - 1) clearInterval(interval2);
+        if (count < texts.length) {
+            renderText(texts[count], count);
+        }
+        count++;
+    }, 3000);
     let width = 10;
     let interval = setInterval(() => {
         ctx.fillStyle = getColor(LEVEL);
@@ -1126,9 +1187,7 @@ function passLevelAnimate() {
         width += 10;
         if (width >= canvas.width + 10) clearInterval(interval);
     }, 15);
-    let texts = ["Nhà ngươi khá lắm, đừng vội mừng",
-        "Ta sẽ con gặp ngươi lần sau"
-    ];
+
 
 }
 
@@ -1213,27 +1272,7 @@ function updateSkills() {
     });
 }
 
-function updateInventories() {
-    paddle1.resetStat();
-    inventories.bag1.forEach((item, index) => {
-        let targetItem = shopItems.filter(i => i.id === item.id)[0];
-        let imgSrc = targetItem.img;
-        let imgE = $("<img>");
-        BALL_DAME += targetItem.dame ? targetItem.dame : 0;
-        PADDLE_SPEED += targetItem.speed ? targetItem.speed : 0;
-        paddle1.velocity.vX = PADDLE_SPEED;
-        paddle1.darkRes = targetItem.darkRes;
-        CritRate += targetItem.critRate ? targetItem.critRate : 0;
-        PADDLE_HP_REGEN *= targetItem.hpRegen ? (1 + targetItem.hpRegen) : 1;
-        PADDLE_MP_REGEN *= targetItem.mpRegen ? (1 + targetItem.mpRegen) : 1;
-        PADDLE_SIZE *= targetItem.width ? (1 + targetItem.width) : 1;
-
-        imgE.attr("src", imgSrc);
-        let lot = $("#lot-" + (index + 1));
-        lot.empty();
-        lot.append(imgE);
-
-    });
+function updateBag2() {
     inventories.bag2.forEach((item, index) => {
         let targetItem = shopItems.filter(i => i.id === item.id)[0];
         let imgSrc = targetItem.img;
@@ -1248,6 +1287,7 @@ function updateInventories() {
         lot.empty();
         if (targetItem.id === "i13" && item.quantity >= 10) {
             showUnlockSkill();
+            item.quantity = 0;
             return;
         }
         if (item.quantity > 0) {
@@ -1255,6 +1295,34 @@ function updateInventories() {
             lot.append(qualityE);
         }
     });
+}
+
+function updateBag1() {
+    paddle1.resetStat();
+    inventories.bag1.forEach((item, index) => {
+        let targetItem = shopItems.filter(i => i.id === item.id)[0];
+        let imgSrc = targetItem.img;
+        let imgE = $("<img>");
+        BALL_DAME += targetItem.dame ? targetItem.dame : 0;
+        PADDLE_SPEED += targetItem.speed ? targetItem.speed : 0;
+        dropRate += targetItem.luck ? targetItem.luck : 0;
+        paddle1.velocity.vX = PADDLE_SPEED;
+        paddle1.darkRes = targetItem.darkRes ? targetItem.darkRes : (false || paddle1.darkRes);
+        CritRate += targetItem.critRate ? targetItem.critRate : 0;
+        PADDLE_HP_REGEN *= targetItem.hpRegen ? (1 + targetItem.hpRegen) : 1;
+        PADDLE_MP_REGEN *= targetItem.mpRegen ? (1 + targetItem.mpRegen) : 1;
+        PADDLE_SIZE *= targetItem.width ? (1 + targetItem.width) : 1;
+        imgE.attr("src", imgSrc);
+        let lot = $("#lot-" + (index + 1));
+        lot.empty();
+        lot.append(imgE);
+
+    });
+}
+
+function updateInventories() {
+    updateBag1();
+    updateBag2();
 }
 
 function updateHpMpBar() {
@@ -1384,7 +1452,7 @@ function useItem(lot) {
                 let noneCoinsSpheres = spheres.filter((s) => s.constructor.name !== "Coin");
                 item.quantity--;
                 noneCoinsSpheres.forEach(s => {
-                    s.velocity.reverseY();
+                    if (s.velocity.vY > 0) s.velocity.reverseY();
                 });
             } else {
                 castSkill("Không có vật phẩm này", false);
@@ -1394,7 +1462,7 @@ function useItem(lot) {
             castSkill("Không có vật phẩm này", false);
             break;
     }
-    updateInventories();
+    updateBag2();
 }
 
 function castSkill(skillName, isUlti) {
@@ -1512,7 +1580,7 @@ function useSkill(skill) {
                     count++;
                     let randomSize = (Math.random() + 1);
                     let flag = count % 2 === 0;
-                    let newRadius = 50 * randomSize;
+                    let newRadius = 70 * randomSize;
                     superBall.radius = newRadius;
                     let newX = flag ? superBall.point.x + superBall.radius :
                         superBall.point.x - superBall.radius;
@@ -1583,9 +1651,9 @@ function useSkill(skill) {
 
 function createSuperBall() {
     let superBall = new Ball(
-        new Point(paddle1.point.x, paddle1.point.y - 100), new Velocity(0, -5), 50);
+        new Point(paddle1.point.x, paddle1.point.y - 100), new Velocity(0, -5), 80);
     superBall.type = 1;
-    superBall.color = "242,125,12";
+    superBall.image = sunImg;
     balls.push(superBall);
     return superBall;
 }
@@ -1599,21 +1667,21 @@ function generateBall() {
 }
 
 function createBall(ballNumber, direction, type) {
-    let y = direction === "up" ? canvas.height - 30 : canvas.height / 2;
+    let y = direction === "up" ? canvas.height - 20 : canvas.height / 2;
     let vX = 5;
     let count = 0;
     let interval = setInterval(() => {
         count++;
-        let x = Math.ceil(Math.random() * canvas.width / 2) + 20;
+        let x = Math.ceil(Math.random() * canvas.width / 2) + 100;
         let offsetV = Math.ceil(Math.random() * 2);
         let vY = direction === "up" ? -5 - offsetV : 5;
         let ball = new Ball(new Point(x, y), new Velocity(vX, vY), BALL_RADIUS);
         ball.type = type;
         if (type === 3) {
-            ball.color = "255,255,255";
-            ball.radius *= 0.7;
-            ball.velocity.vY -= 4;
-
+            y = canvas.height - 100;
+            ball.point.y = y;
+            ball.radius = 30;
+            ball.image = yingYangImg;
         }
         balls.push(ball);
         if (count === ballNumber) clearInterval(interval);
@@ -1756,6 +1824,14 @@ $(".level-menu li").click((event) => {
     }
 });
 
+function pay(amount) {
+    coins += amount;
+    updateStats();
+}
+
+$(".pay-icon").click(() => {
+    pay(50);
+})
 $(".shop-icon").click(() => {
     $(".stats").hide();
     $(".shop").show();
